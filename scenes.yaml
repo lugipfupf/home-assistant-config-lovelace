@@ -1,4 +1,6 @@
-# Scenes
+##############################
+# Wohnzimmer
+##############################
 # Clockwork Orange
 - name: 'Clockwork Orange'
   entities:
@@ -102,3 +104,110 @@
         xy_color: [0.447,0.406]
         brightness: 254
         transition: 2
+
+##############################
+# Schlafzimmer
+##############################
+- name: Schlafzimmer hell
+  entities:
+    light.schlafzimmer:
+      state: on
+      xy_color: [0.458,0.409]
+      brightness: 254
+      transition: 2
+- name: Schlafzimmer gedimmt
+  entities:
+    light.schlafzimmer:
+      state: on
+      xy_color: [0.502,0.414]
+      brightness: 144
+      transition: 2
+- name: Schlafzimmer Nacht
+  entities:
+    light.schlafzimmer:
+      state: on
+      xy_color: [0.676,0.316]
+      brightness: 32
+      transition: 2
+- name: Making Love
+  entities:
+    light.papierlampe_oben:
+      state: on
+      xy_color: [0.634,0.336]
+      brightness: 198
+      transition: 2
+    light.papierlampe_mitte:
+      state: on
+      xy_color: [0.634,0.336]
+      brightness: 198
+      transition: 2
+    light.papierlampe_unten:
+      state: on
+      xy_color: [0.388,0.402]
+      brightness: 198
+      transition: 2
+    light.schlafzimmer_spot:
+      state: on
+      xy_color: [0.635,0.339]
+      brightness: 203
+      transition: 2
+
+##############################
+# Phil
+##############################
+- name: Phil Nacht
+  entities:
+    light.schlafzimmer_phil_buckram:
+      state: off
+      transition: 2
+    light.e14candle:
+      state: on
+      xy_color: [0.677,0.304]
+      brightness: 144
+      transition: 2
+- name: Phil gedimmt
+  entities:
+    light.schlafzimmer_phil:
+      state: on
+      xy_color: [0.457,0.41]
+      brightness: 77
+      transition: 2
+- name: Phil hell
+  entities:
+    light.schlafzimmer_phil:
+      state: on
+      xy_color: [0.459,0.408]
+      brightness: 254
+      transition: 2
+
+##############################
+# Küche
+##############################
+- name: Küche hell
+  entities:
+    light.kuche:
+      state: on
+      xy_color: [0.459,0.408]
+      brightness: 254
+      transition: 2
+- name: Küche gedimmt
+  entities:
+    light.kuche:
+      state: on
+      xy_color: [0.502,0.414]
+      brightness: 151
+      transition: 2
+- name: Küche Nacht
+  entities:
+    light.kuche:
+      state: on
+      xy_color: [0.561,0.404]
+      brightness: 1
+      transition: 2
+- name: Küche Konzentration
+  entities:
+    light.kuche:
+      state: on
+      xy_color: [0.3682,0.3715]
+      brightness: 254
+      transition: 2

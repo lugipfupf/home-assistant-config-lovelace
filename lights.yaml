@@ -1,3 +1,15 @@
+  # All
+  - platform: group
+    name: Alle
+    entities:
+      - light.wohnzimmer
+      - light.schlafzimmer
+      - light.schlafzimmer_phil
+      - light.kuche
+      - light.atelier
+      - light.buro
+      - light.gang
+
   # Wohnzimmmer
   - platform: group
     name: Wohnzimmer
