@@ -4,6 +4,8 @@ resources:
     type: module
   - url: /community_plugin/button-entity-row/button-entity-row.js
     type: module
+  - url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
+    type: module
   - url: /local/manual-plugins/card-tools/card-tools.js?v=2
     type: js
   - url: /local/manual-plugins/layout-card/layout-card.js?v=2
@@ -38,6 +40,20 @@ views:
                     entity: light.cheminee
                     name: Cheminee
                     icon: mdi:fireplace
+              - type: custom:mini-graph-card
+                entities:
+                  - sensor.kuche_sensor_temperature
+                show:
+                  labels: true
+                lower_bound: 17
+                upper_bound: 23
+                color_thresholds:
+                  - value: 17
+                    color: "#1F85DE"
+                  - value: 19
+                    color: "#D3A700"
+                  - value: 21
+                    color: "#C0392B"
           - type: vertical-stack
             cards:
               - type: horizontal-stack
@@ -60,6 +76,20 @@ views:
                     entity: light.schlafzimmer_phil
                     name: Phil
                     icon: mdi:baby-carriage
+              - type: custom:mini-graph-card
+                entities:
+                  - sensor.gang_sensor_temperature
+                show:
+                  labels: true
+                lower_bound: 17
+                upper_bound: 23
+                color_thresholds:
+                  - value: 17
+                    color: "#1F85DE"
+                  - value: 19
+                    color: "#D3A700"
+                  - value: 21
+                    color: "#C0392B"
           - type: vertical-stack
             cards:
               - type: entities
@@ -122,4 +152,3 @@ views:
                         icon: mdi:brightness-6
                       - entity: scene.phil_hell
                         icon: mdi:brightness-7
-
