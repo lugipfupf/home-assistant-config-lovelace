@@ -1,0 +1,112 @@
+title: Home
+resources:
+  - url: /community_plugin/button-card/button-card.js
+    type: module
+  - url: /community_plugin/button-entity-row/button-entity-row.js
+    type: module
+  - url: /local/manual-plugins/card-tools/card-tools.js
+    type: js
+  - url: /local/manual-plugins/layout-card/layout-card.js
+    type: js
+views:
+  - badges:
+      - person.lugi
+      - sensor.kuche_sensor_temperature
+      - sensor.gang_sensor_temperature
+
+    cards:
+      - type: entities
+        entities:
+          - entity: light.wohnzimmer
+            name: Licht Wohnzimmer
+            icon: mdi:theater
+          - type: "custom:button-entity-row"
+            buttons:
+              - entity: scene.wohnzimmer_hell
+                icon: mdi:brightness-7
+              - entity: scene.clockwork_orange
+                icon: mdi:brightness-5
+              - entity: scene.wohnzimmer_relax
+                icon: mdi:brightness-4
+              - entity: scene.gaming
+                icon: mdi:gamepad-variant
+              - entity: scene.movie_menu
+                icon: mdi:movie-open
+
+      - type: vertical-stack
+        cards:
+          - type: light
+            entity: light.wohnzimmer
+            name: Wohnzimmer
+            icon: mdi:theater
+          - type: horizontal-stack
+            cards:
+              - type: light
+                entity: light.atelier
+                name: Atelier
+                icon: mdi:desk-lamp
+              - type: light
+                entity: light.cheminee
+                name: Cheminee
+                icon: mdi:fireplace
+          - type: horizontal-stack
+            cards:
+              - type: light
+                entity: light.gang
+                name: Gang
+                icon: mdi:shoe-print
+              - type: light
+                entity: light.kuche
+                name: Küche
+                icon: mdi:stove
+          - type: horizontal-stack
+            cards:
+              - type: light
+                entity: light.bedroom
+                name: Schlafzimmer
+                icon: mdi:hotel
+              - type: light
+                entity: light.schlafzimmer_phil
+                name: Phil
+                icon: mdi:baby-carriage
+
+
+    icon: 'mdi:home-heart'
+    panel: false
+    path: default_view
+    title: Räume
+  - badges:
+      - sensor.strom_beamer
+      - sensor.strom_receiver
+      - sensor.strom_game
+      - sensor.strom_raspi
+      - sensor.strom_chromecast
+    cards:
+      - entities:
+          - input_boolean.mediacontrol_movies
+          - input_boolean.mediacontrol_switch
+          - input_boolean.mediacontrol_ps4
+          - input_boolean.mediacontrol_steam
+          - input_boolean.mediacontrol_cast
+          - input_boolean.powercontrol_gaming
+        show_header_toggle: false
+        type: entities
+    icon: 'mdi:theater'
+    path: medien
+    theme: Backend-selected
+    title: Medien
+  - title: Strom
+    path: strom
+    icon: 'mdi:power-settings'
+    badges: []
+    cards:
+      - type: history-graph
+        entities:
+          - entity: sensor.strom_beamer
+          - entity: sensor.strom_receiver
+          - entity: sensor.strom_raspi
+          - entity: sensor.strom_game
+          - entity: sensor.strom_chromecast
+        refresh_interval: 0
+        title: Stromverbrauch
+        hours_to_show: 6

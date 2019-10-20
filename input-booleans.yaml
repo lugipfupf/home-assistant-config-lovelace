@@ -1,0 +1,30 @@
+  control_receiver:
+    name: Receiver State
+    initial: off
+  mediacontrol_movies:
+    name: Movie
+    initial: off
+    icon: mdi:movie
+  mediacontrol_switch:
+    name: Nintendo Switch
+    initial: off
+    icon: mdi:nintendo-switch
+  mediacontrol_ps4:
+    name: Playstation 4
+    initial: off
+    icon: mdi:playstation
+  mediacontrol_steam:
+    name: Steam Link
+    icon: mdi:steam
+  mediacontrol_cast:
+    name: Chrome Cast
+    initial: off
+    icon: mdi:cast
+  powercontrol_gaming:
+    name: Controller laden
+    initial: off
+    icon: mdi:xbox-controller-battery-charging
+  pulselight_active:
+   name: Pulselight Active
+   initial: off
+   icon: mdi:blur-radial

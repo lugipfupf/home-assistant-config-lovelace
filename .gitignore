@@ -1,0 +1,16 @@
+.idea
+.cloud
+.storage
+deps
+tts
+custom_components
+www
+
+*.db
+*.db-shm
+*.db-wal
+*.log
+
+.HA_VERSION
+
+secrets.yaml

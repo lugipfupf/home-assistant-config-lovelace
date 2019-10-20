@@ -1,0 +1,68 @@
+- platform: command_line
+  name: 'Strom Receiver'
+  command: "curl -s -X GET 'http://home-socket.home.lugipfupf.ch/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
+  value_template: '{{ value_json.data.watt[3] }}'
+  unit_of_measurement: 'W'
+  scan_interval: 3
+
+- platform: command_line
+  name: 'Strom Game'
+  command: "curl -s -X GET 'http://home-socket.home.lugipfupf.ch/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
+  value_template: '{{ value_json.data.watt[2] }}'
+  unit_of_measurement: 'W'
+  scan_interval: 3
+
+- platform: command_line
+  name: 'Strom ChromeCast'
+  command: "curl -s -X GET 'http://home-socket.home.lugipfupf.ch/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
+  value_template: '{{ value_json.data.watt[4] }}'
+  unit_of_measurement: 'W'
+  scan_interval: 3
+
+- platform: command_line
+  name: 'Strom Raspi'
+  command: "curl -s -X GET 'http://home-socket.home.lugipfupf.ch/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
+  value_template: '{{ value_json.data.watt[5] }}'
+  unit_of_measurement: 'W'
+  scan_interval: 3
+
+- platform: command_line
+  name: 'Strom Beamer'
+  command: "curl -s -X GET 'http://home-socket.home.lugipfupf.ch/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
+  value_template: '{{ value_json.data.watt[0] }}'
+  unit_of_measurement: 'W'
+  scan_interval: 3
+
+# Hue Tap Switch Events
+# PushButton events(button 1: 34, button 2: 16, button 3: 17, button 4: 18)
+- platform: rest
+  resource: http://hue-bridge.home.lugipfupf.ch/api/5oP6NrbOz17x7gQEx890Zy-Sd6TeRMPRloia6qDs/sensors/5
+  value_template: '{{ value_json.state.lastupdated }}'
+  name: 'Hue PushButton Update'
+  scan_interval: 1
+
+- platform: rest
+  resource: http://hue-bridge.home.lugipfupf.ch/api/5oP6NrbOz17x7gQEx890Zy-Sd6TeRMPRloia6qDs/sensors/5
+  value_template: '{{ value_json.state.buttonevent }}'
+  name: 'Hue PushButton'
+  scan_interval: 1
+  
+## Sonarr
+#- platform: sonarr
+#  api_key: !secret sonarr_apikey
+#  host: !secret sonarr_host
+#  port: !secret sonarr_port
+#  monitored_conditions:
+#    - upcoming
+#    - diskspace
+#  days: 2
+#
+## nzbget
+#- platform: nzbget
+#  host: !secret nzbget_host
+#  username: !secret nzbget_username
+#  password: !secret nzbget_password
+#  monitored_variables:
+#    - download_size
+#    - remaining_size
+#    - download_rate

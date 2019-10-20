@@ -1,0 +1,63 @@
+  # Wohnzimmmer
+  - platform: group
+    name: Wohnzimmer
+    entities:
+      - light.leinwand
+      - light.bar
+      - light.chino_decke
+
+  # Schlafzimmer
+  - platform: group
+    name: Papierlampe
+    entities:
+      - light.papierlampe_oben
+      - light.papierlampe_mitte
+      - light.papierlampe_unten
+  - platform: group
+    name: Schlafzimmer
+    entities:
+      - light.papierlampe
+      - light.schlafzimmer_spot
+
+  # Schlafzimmer Phil
+  - platform: group
+    name: Schlafzimmer Phil Buckram
+    entities:
+      - light.buro_buckram_1
+      - light.buro_buckram_2
+  - platform: group
+    name: Schlafzimmer Phil
+    entities:
+      - light.schlafzimmer_phil_buckram
+      - light.e14candle
+
+  # Cheminee
+  - platform: group
+    name: Cheminee
+    entities:
+      - light.buro
+
+  # Atelier
+  - platform: group
+    name: Atelier
+    entities:
+      - light.atelier
+
+  # Küche
+  - platform: group
+    name: Küche
+    entities:
+      - light.kuche
+
+  # Gang
+  - platform: group
+    name: Gang Buckram
+    entities:
+      - light.gang_spot_1
+      - light.gang_spot_2
+      - light.gang_spot_3
+      - light.gang_spot_4
+  - platform: group
+    name: Gang
+    entities:
+      - light.gang_buckram

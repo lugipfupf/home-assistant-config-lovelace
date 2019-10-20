@@ -1,0 +1,104 @@
+# Scenes
+# Clockwork Orange
+- name: 'Clockwork Orange'
+  entities:
+    light.bar:
+      state: on
+      xy_color: [0.625,0.348]
+      brightness: 165
+      transition: 2
+    light.leinwand:
+      state: on
+      xy_color: [0.625,0.348]
+      brightness: 165
+      transition: 2
+    light.atelier:
+      state: on
+      xy_color: [0.503,0.413]
+      brightness: 160
+      transition: 2
+    light.chino_decke:
+      state: on
+      xy_color: [0.452,0.428]
+      brightness: 180
+      transition: 2
+
+# Movie Menu
+- name: 'Movie Menu'
+  entities:
+    light.bar:
+      state: on
+      xy_color: [0.183,0.3374]
+      brightness: 240
+      transition: 2
+    light.leinwand:
+      state: on
+      xy_color: [0.1992, 0.1622]
+      brightness: 240
+      transition: 2
+    light.atelier:
+      state: on
+      xy_color: [0.5014,0.4153]
+      brightness: 180
+      transition: 2
+    light.chino_decke:
+      state: off
+      transition: 2
+    light.gang:
+      state: on
+      transition: 2
+      brightness: 180
+      xy_color: [0.5014, 0.4153]
+
+# Gaming
+- name: 'Gaming'
+  entities:
+    light.bar:
+      state: off
+      transition: 2
+    light.leinwand:
+      state: on
+      xy_color: [0.1992, 0.1622]
+      brightness: 120
+      transition: 2
+    light.chino_decke:
+      state: off
+      transition: 2
+
+# Wohnzimmer Relax
+- name: Wohnzimmer Relax
+  entities:
+    light.bar:
+      state: on
+      xy_color: [0.183,0.3374]
+      brightness: 200
+      transition: 2
+    light.leinwand:
+      state: on
+      xy_color: [0.6873, 0.3062]
+      brightness: 175
+      transition: 2
+    light.chino_decke:
+      state: on
+      xy_color: [0.452,0.428]
+      brightness: 180
+      transition: 2
+
+# Wohnzimmer hell
+- name: Wohnzimmer hell
+  entities:
+    light.leinwand:
+        state: on
+        xy_color: [0.447,0.406]
+        brightness: 254
+        transition: 2
+    light.chino_decke:
+        state: on
+        xy_color: [0.447,0.406]
+        brightness: 254
+        transition: 2
+    light.bar:
+        state: on
+        xy_color: [0.447,0.406]
+        brightness: 254
+        transition: 2

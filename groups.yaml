@@ -1,0 +1,41 @@
+  # Lights
+  lights_cinema:
+    name: Kino
+    entities:
+      - group.lights_paperlamp
+      - light.bar
+      - light.leinwand
+
+  lights_bedroom:
+    name: Schlafzimmer
+    entities:
+      - group.lights_paperlamp
+      - light.schlafzimmer_spot
+
+  lights_paperlamp:
+    name: Papierlampe
+    entities:
+      - light.papierlampe_oben
+      - light.papierlampe_mitte
+      - light.papierlampe_unten
+
+  lights_hallway:
+    name: Gang
+    entities:
+      - light.gang_spot_1
+      - light.gang_spot_2
+      - light.gang_spot_3
+      - light.gang_spot_4
+
+  # Media
+  media_center:
+    name: Media Center
+    control: hidden
+    entities:
+      - input_boolean.mediacontrol_movies
+      - input_boolean.mediacontrol_switch
+      - input_boolean.mediacontrol_ps4
+      - input_boolean.mediacontrol_steam
+      - input_boolean.mediacontrol_cast
+      - input_boolean.powercontrol_gaming
+

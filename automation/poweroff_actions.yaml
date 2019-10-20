@@ -1,0 +1,36 @@
+- alias: 'Receiver Strom ausschalten'
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_boolean.mediacontrol_movies", "off") and is_state("input_boolean.mediacontrol_switch", "off") and is_state("input_boolean.mediacontrol_ps4", "off") and is_state("input_boolean.mediacontrol_steam", "off") and is_state("input_boolean.mediacontrol_cast", "off") }}'
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: switch.powerstate_receiver
+
+- alias: 'Beamer Strom ausschalten'
+  trigger:
+    platform: template
+    value_template: '{{ float(states.sensor.strom_beamer.state) < 5 and (is_state("input_boolean.mediacontrol_movies", "off") and is_state("input_boolean.mediacontrol_cast", "off") and is_state("input_boolean.mediacontrol_ps4", "off") and is_state("input_boolean.mediacontrol_switch", "off") and is_state("input_boolean.mediacontrol_steam", "off")) }}'
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: switch.powerstate_beamer
+
+- alias: 'Raspi Strom ausschalten'
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_boolean.mediacontrol_movies", "off") and not (is_state("media_player.cinebar", "idle") or is_state("media_player.cinebar", "paused") or is_state("media_player.cinebar", "playing")) }}'
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: switch.powerstate_raspi
+
+- alias: 'Game Strom ausschalten'
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_boolean.powercontrol_gaming", "off") and is_state("input_boolean.mediacontrol_switch", "off") and is_state("input_boolean.mediacontrol_ps4", "off") and is_state("input_boolean.mediacontrol_steam", "off") }}'
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: switch.powerstate_game
+

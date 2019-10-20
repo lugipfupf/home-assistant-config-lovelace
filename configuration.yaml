@@ -1,0 +1,66 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+lovelace:
+  mode: yaml
+
+http:
+  # Uncomment this to add a password (recommended!)
+  # api_password: PASSWORD
+  # Uncomment this if you are using SSL or running in Docker etc
+  base_url: !secret base_url
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+
+media_player:
+  - platform: kodi
+    host: !secret kodi_host
+    name: Cinebar
+    turn_off_action:
+      service: media_player.kodi_call_method
+      data:
+        entity_id: media_player.kodi
+        method: System.Shutdown
+  - platform: yamaha
+    scan_interval: 30
+    host: !secret receiver_host
+    name: Receiver
+    zone_ignore:
+      - "zone 2"
+    source_ignore:
+      - V-AUX
+      - Napster
+      - NET RADIO
+      - AV1
+      - AV2
+      - AV3
+      - AV4
+      - AV5
+      - AV6
+      - UAW
+      - iPod
+      - iPod (USB)
+      - AUDIO1
+      - AUDIO2
+      - Bluetooth
+      - USB
+      - PHONO
+    source_names:
+      HDMI1: "Cinebar"
+      HDMI2: "Nintendo Switch"
+      HDMI3: "Playstation 4"
+      HDMI4: "Chrome Cast"
+      HDMI5: "Steam Link"
+
+light: !include lights.yaml
+scene: !include scenes.yaml
+input_boolean: !include input-booleans.yaml
+switch: !include switches.yaml
+group: !include groups.yaml
+automation: !include_dir_merge_list automation
+script: !include scripts.yaml
+sensor: !include sensors.yaml
