@@ -19,6 +19,9 @@ views:
       - type: "custom:layout-card"
         layout: horizontal
         cards:
+          ######################################
+          # Spalte links
+          ######################################
           - type: vertical-stack
             cards:
               - type: horizontal-stack
@@ -41,19 +44,38 @@ views:
                     name: Cheminee
                     icon: mdi:fireplace
               - type: custom:mini-graph-card
-                entities:
-                  - sensor.kuche_sensor_temperature
+                name: Küche
+                lower_bound: 17
+                upper_bound: 27
                 show:
                   labels: true
-                lower_bound: 17
-                upper_bound: 23
+                entities:
+                  - sensor.kuche_sensor_temperature
                 color_thresholds:
                   - value: 17
                     color: "#1F85DE"
-                  - value: 19
-                    color: "#D3A700"
-                  - value: 21
+                  - value: 22
+                    color: "#2CD300"
+                  - value: 24
                     color: "#C0392B"
+              - type: custom:mini-graph-card
+                name: Schlafzimmer
+                lower_bound: 17
+                upper_bound: 27
+                show:
+                  labels: true
+                entities:
+                  - sensor.netatmo_cheminee_temperature
+                color_thresholds:
+                  - value: 17
+                    color: "#1F85DE"
+                  - value: 22
+                    color: "#2CD300"
+                  - value: 24
+                    color: "#C0392B"
+          ######################################
+          # Spalte mitte
+          ######################################
           - type: vertical-stack
             cards:
               - type: horizontal-stack
@@ -77,19 +99,38 @@ views:
                     name: Phil
                     icon: mdi:baby-carriage
               - type: custom:mini-graph-card
-                entities:
-                  - sensor.gang_sensor_temperature
+                name: Wohnzimmer
+                lower_bound: 17
+                upper_bound: 27
                 show:
                   labels: true
-                lower_bound: 17
-                upper_bound: 23
+                entities:
+                  - sensor.netatmo_chino_temperature
                 color_thresholds:
                   - value: 17
                     color: "#1F85DE"
-                  - value: 19
-                    color: "#D3A700"
-                  - value: 21
+                  - value: 22
+                    color: "#2CD300"
+                  - value: 24
                     color: "#C0392B"
+              - type: custom:mini-graph-card
+                name: Phil
+                lower_bound: 17
+                upper_bound: 27
+                show:
+                  labels: true
+                entities:
+                  - sensor.netatmo_schlafzimmer_temperature
+                color_thresholds:
+                  - value: 17
+                    color: "#1F85DE"
+                  - value: 22
+                    color: "#2CD300"
+                  - value: 24
+                    color: "#C0392B"
+          ######################################
+          # Spalte rechts
+          ######################################
           - type: vertical-stack
             cards:
               - type: entities
@@ -152,12 +193,13 @@ views:
                         icon: mdi:brightness-6
                       - entity: scene.phil_hell
                         icon: mdi:brightness-7
+             # CO2 & Luftfeuchtigkeit
               - type: vertical-stack
                 cards:
                 - type: horizontal-stack
                   cards:
                   - type: custom:mini-graph-card
-                    name: Cheminee
+                    name: Schlafzimmer
                     hours_to_show: 6
                     line_color: blue
                     line_width: 2
@@ -180,21 +222,21 @@ views:
                 - type: horizontal-stack
                   cards:
                   - type: custom:mini-graph-card
-                    name: Cheminee
+                    name: Schlafzimmer
                     hours_to_show: 6
                     line_color: blue
                     line_width: 2
                     entities:
                       - sensor.netatmo_cheminee_humidity
                   - type: custom:mini-graph-card
-                    name: Cheminee
+                    name: Wohnzimmer
                     hours_to_show: 6
                     line_color: red
                     line_width: 2
                     entities:
                       - sensor.netatmo_chino_humidity
                   - type: custom:mini-graph-card
-                    name: Schlafzimmer
+                    name: Phil
                     hours_to_show: 6
                     line_color: orange
                     line_width: 2
