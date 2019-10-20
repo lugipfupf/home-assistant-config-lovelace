@@ -152,3 +152,51 @@ views:
                         icon: mdi:brightness-6
                       - entity: scene.phil_hell
                         icon: mdi:brightness-7
+              - type: vertical-stack
+                cards:
+                - type: horizontal-stack
+                  cards:
+                  - type: custom:mini-graph-card
+                    name: Cheminee
+                    hours_to_show: 6
+                    line_color: blue
+                    line_width: 2
+                    entities:
+                      - sensor.netatmo_cheminee_co2
+                  - type: custom:mini-graph-card
+                    name: Wohnzimmer
+                    hours_to_show: 6
+                    line_color: red
+                    line_width: 2
+                    entities:
+                      - sensor.netatmo_chino_co2
+                  - type: custom:mini-graph-card
+                    name: Phil
+                    hours_to_show: 6
+                    line_color: orange
+                    line_width: 2
+                    entities:
+                      - sensor.netatmo_schlafzimmer_co2
+                - type: horizontal-stack
+                  cards:
+                  - type: custom:mini-graph-card
+                    name: Cheminee
+                    hours_to_show: 6
+                    line_color: blue
+                    line_width: 2
+                    entities:
+                      - sensor.netatmo_cheminee_humidity
+                  - type: custom:mini-graph-card
+                    name: Cheminee
+                    hours_to_show: 6
+                    line_color: red
+                    line_width: 2
+                    entities:
+                      - sensor.netatmo_chino_humidity
+                  - type: custom:mini-graph-card
+                    name: Schlafzimmer
+                    hours_to_show: 6
+                    line_color: orange
+                    line_width: 2
+                    entities:
+                      - sensor.netatmo_schlafzimmer_humidity

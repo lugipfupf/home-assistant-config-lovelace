@@ -15,7 +15,6 @@ http:
 tts:
   - platform: google_translate
 
-
 media_player:
   - platform: kodi
     host: !secret kodi_host
@@ -55,6 +54,12 @@ media_player:
       HDMI3: "Playstation 4"
       HDMI4: "Chrome Cast"
       HDMI5: "Steam Link"
+
+netatmo:
+  api_key: !secret netatmo_api-key
+  secret_key: !secret netatmo_secret-key
+  username: !secret netatmo_username
+  password: !secret netatmo_password
 
 light: !include lights.yaml
 scene: !include scenes.yaml
