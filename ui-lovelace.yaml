@@ -43,41 +43,6 @@ views:
                     entity: light.cheminee
                     name: Cheminee
                     icon: mdi:fireplace
-              - type: custom:mini-graph-card
-                name: Küche
-                lower_bound: 17
-                upper_bound: 27
-                show:
-                  labels: true
-                entities:
-                  - sensor.kuche_sensor_temperature
-                color_thresholds:
-                  - value: 17
-                    color: "#1F85DE"
-                  - value: 22
-                    color: "#2CD300"
-                  - value: 24
-                    color: "#C0392B"
-              - type: custom:mini-graph-card
-                name: Schlafzimmer
-                lower_bound: 17
-                upper_bound: 27
-                show:
-                  labels: true
-                entities:
-                  - sensor.netatmo_cheminee_temperature
-                color_thresholds:
-                  - value: 17
-                    color: "#1F85DE"
-                  - value: 22
-                    color: "#2CD300"
-                  - value: 24
-                    color: "#C0392B"
-          ######################################
-          # Spalte mitte
-          ######################################
-          - type: vertical-stack
-            cards:
               - type: horizontal-stack
                 cards:
                   - type: light
@@ -98,38 +63,10 @@ views:
                     entity: light.schlafzimmer_phil
                     name: Phil
                     icon: mdi:baby-carriage
-              - type: custom:mini-graph-card
-                name: Wohnzimmer
-                lower_bound: 17
-                upper_bound: 27
-                show:
-                  labels: true
-                entities:
-                  - sensor.netatmo_chino_temperature
-                color_thresholds:
-                  - value: 17
-                    color: "#1F85DE"
-                  - value: 22
-                    color: "#2CD300"
-                  - value: 24
-                    color: "#C0392B"
-              - type: custom:mini-graph-card
-                name: Phil
-                lower_bound: 17
-                upper_bound: 27
-                show:
-                  labels: true
-                entities:
-                  - sensor.netatmo_schlafzimmer_temperature
-                color_thresholds:
-                  - value: 17
-                    color: "#1F85DE"
-                  - value: 22
-                    color: "#2CD300"
-                  - value: 24
-                    color: "#C0392B"
+
+
           ######################################
-          # Spalte rechts
+          # Spalte mitte
           ######################################
           - type: vertical-stack
             cards:
@@ -193,52 +130,160 @@ views:
                         icon: mdi:brightness-6
                       - entity: scene.phil_hell
                         icon: mdi:brightness-7
-             # CO2 & Luftfeuchtigkeit
+                # CO2 & Luftfeuchtigkeit
               - type: vertical-stack
                 cards:
-                - type: horizontal-stack
-                  cards:
-                  - type: custom:mini-graph-card
-                    name: Schlafzimmer
-                    hours_to_show: 6
-                    line_color: blue
-                    line_width: 2
-                    entities:
-                      - sensor.netatmo_cheminee_co2
-                  - type: custom:mini-graph-card
-                    name: Wohnzimmer
-                    hours_to_show: 6
-                    line_color: red
-                    line_width: 2
-                    entities:
-                      - sensor.netatmo_chino_co2
-                  - type: custom:mini-graph-card
-                    name: Phil
-                    hours_to_show: 6
-                    line_color: orange
-                    line_width: 2
-                    entities:
-                      - sensor.netatmo_schlafzimmer_co2
-                - type: horizontal-stack
-                  cards:
-                  - type: custom:mini-graph-card
-                    name: Schlafzimmer
-                    hours_to_show: 6
-                    line_color: blue
-                    line_width: 2
-                    entities:
-                      - sensor.netatmo_cheminee_humidity
-                  - type: custom:mini-graph-card
-                    name: Wohnzimmer
-                    hours_to_show: 6
-                    line_color: red
-                    line_width: 2
-                    entities:
-                      - sensor.netatmo_chino_humidity
-                  - type: custom:mini-graph-card
-                    name: Phil
-                    hours_to_show: 6
-                    line_color: orange
-                    line_width: 2
-                    entities:
-                      - sensor.netatmo_schlafzimmer_humidity
+                  - type: horizontal-stack
+                    cards:
+                      - type: custom:mini-graph-card
+                        name: Schlafzimmer
+                        hours_to_show: 12
+                        line_color: blue
+                        line_width: 2
+                        entities:
+                          - sensor.netatmo_cheminee_co2
+                      - type: custom:mini-graph-card
+                        name: Wohnzimmer
+                        hours_to_show: 12
+                        line_color: red
+                        line_width: 2
+                        entities:
+                          - sensor.netatmo_chino_co2
+                      - type: custom:mini-graph-card
+                        name: Phil
+                        hours_to_show: 12
+                        line_color: orange
+                        line_width: 2
+                        entities:
+                          - sensor.netatmo_schlafzimmer_co2
+                  - type: horizontal-stack
+                    cards:
+                      - type: custom:mini-graph-card
+                        name: Schlafzimmer
+                        hours_to_show: 12
+                        line_color: blue
+                        line_width: 2
+                        lower_bound: 30
+                        upper_bound: 90
+                        entities:
+                          - sensor.netatmo_cheminee_humidity
+                      - type: custom:mini-graph-card
+                        name: Wohnzimmer
+                        hours_to_show: 12
+                        line_color: red
+                        line_width: 2
+                        lower_bound: 30
+                        upper_bound: 90
+                        entities:
+                          - sensor.netatmo_chino_humidity
+                      - type: custom:mini-graph-card
+                        name: Phil
+                        hours_to_show: 12
+                        line_color: orange
+                        line_width: 2
+                        lower_bound: 30
+                        upper_bound: 90
+                        entities:
+                          - sensor.netatmo_schlafzimmer_humidity
+          ######################################
+          # Spalte rechts
+          ######################################
+          - type: vertical-stack
+            cards:
+              - type: custom:mini-graph-card
+                name: Küche
+                lower_bound: 17
+                upper_bound: 23
+                show:
+                  labels: true
+                entities:
+                  - sensor.kuche_sensor_temperature
+                color_thresholds:
+                  - value: 17
+                    color: "#1F85DE"
+                  - value: 21
+                    color: "#2CD300"
+                  - value: 24
+                    color: "#C0392B"
+              - type: custom:mini-graph-card
+                name: Schlafzimmer
+                lower_bound: 17
+                upper_bound: 23
+                show:
+                  labels: true
+                entities:
+                  - sensor.netatmo_cheminee_temperature
+                color_thresholds:
+                  - value: 17
+                    color: "#1F85DE"
+                  - value: 21
+                    color: "#2CD300"
+                  - value: 24
+                    color: "#C0392B"
+              - type: custom:mini-graph-card
+                name: Wohnzimmer
+                lower_bound: 17
+                upper_bound: 23
+                show:
+                  labels: true
+                entities:
+                  - sensor.netatmo_chino_temperature
+                color_thresholds:
+                  - value: 17
+                    color: "#1F85DE"
+                  - value: 21
+                    color: "#2CD300"
+                  - value: 24
+                    color: "#C0392B"
+              - type: custom:mini-graph-card
+                name: Phil
+                lower_bound: 17
+                upper_bound: 23
+                show:
+                  labels: true
+                entities:
+                  - sensor.netatmo_schlafzimmer_temperature
+                color_thresholds:
+                  - value: 17
+                    color: "#1F85DE"
+                  - value: 21
+                    color: "#2CD300"
+                  - value: 24
+                    color: "#C0392B"
+
+  - badges:
+      - sensor.strom_beamer
+      - sensor.strom_receiver
+      - sensor.strom_game
+      - sensor.strom_raspi
+      - sensor.strom_chromecast
+    cards:
+      - entities:
+          - input_boolean.mediacontrol_movies
+          - input_boolean.mediacontrol_switch
+          - input_boolean.mediacontrol_ps4
+          - input_boolean.mediacontrol_steam
+          - input_boolean.mediacontrol_cast
+          - input_boolean.powercontrol_gaming
+        show_header_toggle: false
+        type: entities
+    icon: 'mdi:theater'
+    path: medien
+    theme: Backend-selected
+    title: Medien
+  - title: Strom
+    path: strom
+    icon: 'mdi:power-settings'
+    badges: []
+    cards:
+      - type: history-graph
+        entities:
+          - entity: sensor.strom_beamer
+          - entity: sensor.strom_receiver
+          - entity: sensor.strom_raspi
+          - entity: sensor.strom_game
+          - entity: sensor.strom_chromecast
+        refresh_interval: 0
+        title: Stromverbrauch
+        hours_to_show: 6
+
