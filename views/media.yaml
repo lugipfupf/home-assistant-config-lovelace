@@ -1,0 +1,20 @@
+title: Medien
+path: medien
+icon: 'mdi:theater'
+theme: Backend-selected
+badges:
+  - sensor.strom_beamer
+  - sensor.strom_receiver
+  - sensor.strom_game
+  - sensor.strom_raspi
+  - sensor.strom_chromecast
+cards:
+  - entities:
+      - input_boolean.mediacontrol_movies
+      - input_boolean.mediacontrol_switch
+      - input_boolean.mediacontrol_ps4
+      - input_boolean.mediacontrol_steam
+      - input_boolean.mediacontrol_cast
+      - input_boolean.powercontrol_gaming
+    show_header_toggle: false
+    type: entities

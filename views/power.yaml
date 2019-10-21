@@ -1,0 +1,15 @@
+title: Strom
+path: strom
+icon: 'mdi:power-settings'
+cards:
+  - type: history-graph
+    entities:
+      - entity: sensor.strom_beamer
+      - entity: sensor.strom_receiver
+      - entity: sensor.strom_raspi
+      - entity: sensor.strom_game
+      - entity: sensor.strom_chromecast
+    refresh_interval: 0
+    title: Stromverbrauch
+    hours_to_show: 6
+
