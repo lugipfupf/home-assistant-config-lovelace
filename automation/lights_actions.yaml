@@ -1,0 +1,75 @@
+- alias: "Media player paused/stopped"
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_boolean.mediacontrol_movies", "on") and (is_state("media_player.cinebar", "idle") or is_state("media_player.cinebar", "paused")) }}'
+  action:
+    service: scene.turn_on
+    entity_id: scene.movie_menu
+
+- alias: "Media player playing"
+  initial_state: true
+  trigger:
+    platform: template
+    value_template: '{{ is_state("media_player.cinebar", "playing") and is_state("input_boolean.mediacontrol_movies", "on") }}'
+  action:
+    service: light.turn_off
+    entity_id: light.grosser_saal
+
+- alias: "Colorful gaming lights"
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_boolean.mediacontrol_switch", "on") or is_state("input_boolean_nesmini", "on") or is_state("input_boolean.ps3", "on") }}'
+  action:
+    service: scene.turn_on
+    entity_id: scene.gaming
+
+# Licht ausschalten via Hue PushButton
+- alias: "PushButton 1"
+  trigger:
+    platform: state
+    entity_id: sensor.hue_pushbutton_update
+  condition:
+    condition: state
+    entity_id: sensor.hue_pushbutton
+    state: '34'
+  action:
+    service: light.turn_off
+    entity_id: light.alle
+
+#### DEPRECATED
+- alias: "PushButton 4"
+  trigger:
+    platform: state
+    entity_id: sensor.hue_pushbutton_update
+  condition:
+    condition: state
+    entity_id: sensor.hue_pushbutton
+    state: '18'
+  action:
+    service: scene.turn_on
+    entity_id: scene.movie_menu
+
+#### DEPRECATED
+- alias: "PushButton 2"
+  trigger:
+    platform: state
+    entity_id: sensor.hue_pushbutton_update
+  condition:
+    condition: state
+    entity_id: sensor.hue_pushbutton
+    state: '16'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.all_on
+
+- alias: "PushButton 3"
+  trigger:
+    platform: state
+    entity_id: sensor.hue_pushbutton_update
+  condition:
+    condition: state
+    entity_id: sensor.hue_pushbutton
+    state: '17'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.nightlight

@@ -17,6 +17,11 @@
       - light.leinwand
       - light.bar
       - light.chino_decke
+  - platform: group
+    name: Grosser Saal
+    entities:
+      - light.wohnzimmer
+      - light.atelier
 
   # Schlafzimmer
   - platform: group
