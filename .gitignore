@@ -5,6 +5,7 @@ deps
 tts
 custom_components
 www
+themes
 
 *.db
 *.db-shm
