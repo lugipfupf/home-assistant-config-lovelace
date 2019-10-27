@@ -1,0 +1,68 @@
+title: Kalender
+path: calendar
+icon: mdi:calendar-heart
+cards:
+  - type: "custom:atomic-calendar"
+    title: "Kalender"
+    defaultMode: 2
+    entities:
+      - type: icon2
+        entity: calendar.family
+      - type: icon3
+        entity: calendar.beat_luginbuhl_privat
+      - type: holyday
+        entity: calendar.feiertage_in_der_schweiz
+  - type: "custom:atomic-calendar"
+    title: "Familie"
+    defaultMode: 1
+    maxDaysToShow: 31
+    fullDayEventText: 'All day'
+    untilText: 'Bis'
+    showColors: true
+    showLocation: true
+    showMonth: true
+    showCurrentEventLine: false
+    dateColor: black
+    dateSize: 90
+    timeColor: blue
+    timeSize: 90
+    titleColor: black
+    titleSize: 100
+    locationIconColor: 'rgb(230, 124, 115)'
+    locationLinkColor: black
+    locationTextSize: 90
+    dimFinishedEvents: true
+    finishedEventOpacity: 0.6
+    finishedEventFilter: 'grayscale(100%)'
+    dayWrapperLineColor: black
+    eventBarColor: blue
+    progressBarColor: blue
+    entities:
+      - entity: calendar.family
+  - type: "custom:atomic-calendar"
+    title: "Lugi"
+    defaultMode: 1
+    maxDaysToShow: 31
+    fullDayEventText: 'All day'
+    untilText: 'Bis'
+    showColors: true
+    showLocation: true
+    showMonth: true
+    showCurrentEventLine: false
+    dateColor: black
+    dateSize: 90
+    timeColor: blue
+    timeSize: 90
+    titleColor: black
+    titleSize: 100
+    locationIconColor: 'rgb(230, 124, 115)'
+    locationLinkColor: black
+    locationTextSize: 90
+    dimFinishedEvents: true
+    finishedEventOpacity: 0.6
+    finishedEventFilter: 'grayscale(100%)'
+    dayWrapperLineColor: black
+    eventBarColor: blue
+    progressBarColor: blue
+    entities:
+      - entity: calendar.beat_luginbuhl_privat

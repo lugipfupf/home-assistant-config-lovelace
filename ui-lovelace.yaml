@@ -6,6 +6,8 @@ resources:
     type: module
   - url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
     type: module
+  - url: /community_plugin/atomic_calendar/atomic_calendar.js
+    type: module
   - url: /local/manual-plugins/card-tools/card-tools.js?v=2
     type: js
   - url: /local/manual-plugins/layout-card/layout-card.js?v=2
@@ -13,6 +15,7 @@ resources:
 views:
   - !include views/home.yaml
   - !include views/media.yaml
+  - !include views/calendar.yaml
   - !include views/power.yaml
 
 

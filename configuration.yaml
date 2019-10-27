@@ -60,6 +60,10 @@ media_player:
       HDMI4: "Chrome Cast"
       HDMI5: "Steam Link"
 
+google:
+  client_id: !secret calendar_family_client_id
+  client_secret: !secret calendar_family_secret
+
 netatmo:
   api_key: !secret netatmo_api-key
   secret_key: !secret netatmo_secret-key

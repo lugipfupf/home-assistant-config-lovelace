@@ -15,4 +15,6 @@ themes
 .HA_VERSION
 
 secrets.yaml
+google_calendars.yaml
+.google.token
 temp.yaml
