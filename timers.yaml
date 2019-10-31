@@ -1,0 +1,7 @@
+atmosphere_pulselight_on:
+  name: Timer Pulselight On
+  duration: '00:00:05'
+
+atmosphere_pulselight_off:
+  name: Timer Pulselight Off
+  duration: '00:00:02'
