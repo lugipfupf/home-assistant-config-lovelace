@@ -78,3 +78,4 @@ group: !include groups.yaml
 automation: !include_dir_merge_list automation
 script: !include scripts.yaml
 sensor: !include sensors.yaml
+timer: !include timers.yaml

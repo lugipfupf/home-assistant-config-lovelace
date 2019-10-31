@@ -105,6 +105,30 @@
         brightness: 254
         transition: 2
 
+# Frischluft
+- name: Frischluft
+  entities:
+    light.bar:
+      state: on
+      xy_color: [0.572,0.397]
+      brightness: 144
+      transition: 5
+- name: Frischluft aus
+  entities:
+    light.bar:
+      state: off
+      transition: 2
+
+# Frischluft dringend
+- name: Frischluft
+  entities:
+    light.bar:
+      state: on
+      xy_color: [0.678,0.311]
+      brightness: 144
+      transition: 5
+
+
 ##############################
 # Schlafzimmer
 ##############################
