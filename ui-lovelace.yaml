@@ -27,3 +27,8 @@ views:
     path: test
     icon: mdi:test-tube
     cards:
+      - type: entities
+        entities:
+          - input_boolean.pulselight_active
+          - timer.atmosphere_pulselight_on
+          - timer.atmosphere_pulselight_off
