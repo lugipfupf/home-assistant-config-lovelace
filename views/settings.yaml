@@ -3,7 +3,7 @@ path: settings
 icon: mdi:settings
 cards:
   - type: entities
+    show_header_toggle: false
     entities:
       - entity: input_boolean.pulselight_active
         name: Blinklicht Luftqualität
-    show_header_toggle: false
