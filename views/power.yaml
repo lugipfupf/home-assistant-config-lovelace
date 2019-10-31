@@ -1,6 +1,6 @@
 title: Strom
 path: strom
-icon: 'mdi:power-settings'
+icon: mdi:power-settings
 cards:
   - type: history-graph
     entities:

@@ -1,0 +1,9 @@
+title: Settings
+path: settings
+icon: mdi:settings
+cards:
+  - type: entities
+    entities:
+      - timer.motion_timer_gang
+      - binary_sensor.gang_sensor_motion
+    show_header_toggle: false

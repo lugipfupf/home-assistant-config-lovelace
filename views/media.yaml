@@ -1,6 +1,6 @@
 title: Medien
 path: medien
-icon: 'mdi:theater'
+icon: mdi:theater
 theme: Backend-selected
 badges:
   - sensor.strom_beamer
@@ -9,7 +9,8 @@ badges:
   - sensor.strom_raspi
   - sensor.strom_chromecast
 cards:
-  - entities:
+  - type: entities
+    entities:
       - input_boolean.mediacontrol_movies
       - input_boolean.mediacontrol_switch
       - input_boolean.mediacontrol_ps4
@@ -17,4 +18,9 @@ cards:
       - input_boolean.mediacontrol_cast
       - input_boolean.powercontrol_gaming
     show_header_toggle: false
-    type: entities
+  - type: custom:upcoming-media-card
+    entity: sensor.sonarr_upcoming_media
+    title: Neue Episoden
+    clock: 24
+    all_shadows: false
+    image_style: poster

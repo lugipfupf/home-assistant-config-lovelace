@@ -46,17 +46,38 @@
   value_template: '{{ value_json.state.buttonevent }}'
   name: 'Hue PushButton'
   scan_interval: 1
-  
-## Sonarr
-#- platform: sonarr
-#  api_key: !secret sonarr_apikey
-#  host: !secret sonarr_host
-#  port: !secret sonarr_port
+
+# Sonarr
+- platform: sonarr_upcoming_media
+  api_key: !secret sonarr_apikey
+  host: !secret sonarr_host
+  port: !secret sonarr_port
+  days: 7
+  ssl: false
+  max: 10
+
+## Synolog - Does not work with Two-Factor-Auth enabled
+#- platform: synologydsm
+#  host: !secret syno_host
+#  port: 5000
+#  ssl: false
+#  name: !secret syno_name
+#  username: !secret syno_username
+#  password: !secret syno_password
 #  monitored_conditions:
-#    - upcoming
-#    - diskspace
-#  days: 2
-#
+#    - cpu_total_load
+#    - memory_size
+#    - memory_real_usage
+#    - memory_available_real
+#    - memory_available_swap
+#    - memory_total_swap
+#    - disk_smart_status
+#    - disk_temp
+#    - volume_status
+#    - volume_size_total
+#    - volume_size_used
+#    - volume_percentage_used
+
 ## nzbget
 #- platform: nzbget
 #  host: !secret nzbget_host

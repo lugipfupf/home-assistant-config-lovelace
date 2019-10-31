@@ -8,6 +8,8 @@ resources:
     type: module
   - url: /community_plugin/atomic_calendar/atomic_calendar.js
     type: module
+  - url: /community_plugin/upcoming-media-card/upcoming-media-card.js?v=2
+    type: js
   - url: /local/manual-plugins/card-tools/card-tools.js?v=2
     type: js
   - url: /local/manual-plugins/layout-card/layout-card.js?v=2
@@ -17,5 +19,11 @@ views:
   - !include views/media.yaml
   - !include views/calendar.yaml
   - !include views/power.yaml
-
-
+  - title: Network
+    path: network
+    icon: mdi:lan
+    cards:
+  - title: test
+    path: test
+    icon: mdi:test-tube
+    cards:
