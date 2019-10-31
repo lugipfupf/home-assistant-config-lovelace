@@ -19,6 +19,7 @@ views:
   - !include views/media.yaml
   - !include views/calendar.yaml
   - !include views/power.yaml
+  - !include views/settings.yaml
   - title: Network
     path: network
     icon: mdi:lan
@@ -29,6 +30,7 @@ views:
     cards:
       - type: entities
         entities:
-          - input_boolean.pulselight_active
-          - timer.atmosphere_pulselight_on
-          - timer.atmosphere_pulselight_off
+          - entity: input_boolean.pulselight_active
+            name: Blinklicht Luftqualität
+          - entity: timer.atmosphere_pulselight_on
+          - entity: timer.atmosphere_pulselight_off

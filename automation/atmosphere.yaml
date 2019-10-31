@@ -2,7 +2,7 @@
 - alias: "Atmosphere bad"
   trigger:
     platform: template
-    value_template: '{{ states.sensor.netatmo_chino_co2.state | int > 800 }}'
+    value_template: '{{ ((states.sensor.netatmo_chino_co2.state | int + states.sensor.netatmo_cheminee_co2.state | int + states.sensor.netatmo_schlafzimmer_co2.state | int) / 3) | int > 900 }}'
   action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.pulselight_active
@@ -10,7 +10,7 @@
 - alias: "Atmosphere good"
   trigger:
     platform: template
-    value_template: '{{ states.sensor.netatmo_chino_co2.state | int < 600 }}'
+    value_template: '{{ ((states.sensor.netatmo_chino_co2.state | int + states.sensor.netatmo_cheminee_co2.state | int + states.sensor.netatmo_schlafzimmer_co2.state | int) / 3) | int < 700 }}'
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.pulselight_active
