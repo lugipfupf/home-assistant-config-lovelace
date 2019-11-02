@@ -73,6 +73,7 @@ netatmo:
 light: !include lights.yaml
 scene: !include scenes.yaml
 input_boolean: !include input-booleans.yaml
+input_number: !include input-numbers.yaml
 switch: !include switches.yaml
 group: !include groups.yaml
 automation: !include_dir_merge_list automation
