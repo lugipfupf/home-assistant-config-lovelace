@@ -17,27 +17,15 @@ resources:
 views:
   - !include views/home.yaml
   - !include views/media.yaml
+  - !include views/atmosphere.yaml
   - !include views/calendar.yaml
-  - !include views/power.yaml
-  - !include views/settings.yaml
-  - title: Network
-    path: network
-    icon: mdi:lan
-    cards:
-  - title: test
-    path: test
-    icon: mdi:test-tube
-    cards:
-      - type: entities
-        title: Luft
-        show_header_toggle: false
-        entities:
-          - entity: sensor.air_quality
-            icon: mdi:periodic-table-co2
-          - entity: input_number.atmosphere_threshold_on
-            icon: mdi:lightbulb-on
-          - entity: input_number.atmosphere_threshold_off
-            icon: mdi:lightbulb
-          - entity: input_boolean.pulselight_active
-            name: Blinklicht Luftqualität
-            icon: mdi:alarm-light
+#  - !include views/power.yaml
+#  - !include views/settings.yaml
+#  - title: Network
+#    path: network
+#    icon: mdi:lan
+#    cards:
+#  - title: test
+#    path: test
+#    icon: mdi:test-tube
+#    cards:

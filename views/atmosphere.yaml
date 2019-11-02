@@ -1,0 +1,118 @@
+title: Raumklima
+path: atmosphere
+icon: mdi:weather-windy
+cards:
+  - type: entities
+    title: Luft
+    show_header_toggle: false
+    entities:
+      - entity: sensor.air_quality
+        icon: mdi:periodic-table-co2
+      - entity: input_number.atmosphere_threshold_on
+        icon: mdi:lightbulb-on
+      - entity: input_number.atmosphere_threshold_off
+        icon: mdi:lightbulb
+      - entity: input_boolean.pulselight_active
+        name: Blinklicht Luftqualität
+        icon: mdi:alarm-light
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:mini-graph-card
+            name: Schlafzimmer
+            hours_to_show: 12
+            line_color: blue
+            line_width: 2
+            entities:
+              - sensor.netatmo_cheminee_co2
+          - type: custom:mini-graph-card
+            name: Wohnzimmer
+            hours_to_show: 12
+            line_color: red
+            line_width: 2
+            entities:
+              - sensor.netatmo_chino_co2
+          - type: custom:mini-graph-card
+            name: Phil
+            hours_to_show: 12
+            line_color: orange
+            line_width: 2
+            entities:
+              - sensor.netatmo_schlafzimmer_co2
+      - type: horizontal-stack
+        cards:
+          - type: custom:mini-graph-card
+            name: Schlafzimmer
+            hours_to_show: 12
+            line_color: blue
+            line_width: 2
+            lower_bound: 30
+            upper_bound: 90
+            entities:
+              - sensor.netatmo_cheminee_humidity
+          - type: custom:mini-graph-card
+            name: Wohnzimmer
+            hours_to_show: 12
+            line_color: red
+            line_width: 2
+            lower_bound: 30
+            upper_bound: 90
+            entities:
+              - sensor.netatmo_chino_humidity
+          - type: custom:mini-graph-card
+            name: Phil
+            hours_to_show: 12
+            line_color: orange
+            line_width: 2
+            lower_bound: 30
+            upper_bound: 90
+            entities:
+              - sensor.netatmo_schlafzimmer_humidity
+      - type: horizontal-stack
+        cards:
+          - type: custom:mini-graph-card
+            name: Schlafzimmer
+            lower_bound: 17
+            upper_bound: 23
+            show:
+              labels: true
+            entities:
+              - sensor.netatmo_cheminee_temperature
+            color_thresholds:
+              - value: 17
+                color: "#1F85DE"
+              - value: 21
+                color: "#2CD300"
+              - value: 24
+                color: "#C0392B"
+          - type: custom:mini-graph-card
+            name: Wohnzimmer
+            lower_bound: 17
+            upper_bound: 23
+            show:
+              labels: true
+            entities:
+              - sensor.netatmo_chino_temperature
+            color_thresholds:
+              - value: 17
+                color: "#1F85DE"
+              - value: 21
+                color: "#2CD300"
+              - value: 24
+                color: "#C0392B"
+          - type: custom:mini-graph-card
+            name: Phil
+            lower_bound: 17
+            upper_bound: 23
+            show:
+              labels: true
+            entities:
+              - sensor.netatmo_schlafzimmer_temperature
+            color_thresholds:
+              - value: 17
+                color: "#1F85DE"
+              - value: 21
+                color: "#2CD300"
+              - value: 24
+                color: "#C0392B"
