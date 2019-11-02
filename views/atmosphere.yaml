@@ -3,7 +3,7 @@ path: atmosphere
 icon: mdi:weather-windy
 cards:
   - type: entities
-    title: Luft
+    title: Raumklima
     show_header_toggle: false
     entities:
       - entity: sensor.air_quality
