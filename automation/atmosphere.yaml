@@ -2,7 +2,7 @@
 - alias: "Atmosphere bad"
   trigger:
     platform: template
-    value_template: '{{ states.sensor.air_quality.state | int > states.input_number.atmosphere_threshold_on.state }}'
+    value_template: '{{ states.sensor.air_quality.state | int > states.input_number.atmosphere_threshold_on.state | int }}'
   action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.pulselight_active
@@ -10,7 +10,7 @@
 - alias: "Atmosphere good"
   trigger:
     platform: template
-    value_template: '{{ states.sensor.air_quality.state | int < states.input_number.atmosphere_threshold_off.state }}'
+    value_template: '{{ states.sensor.air_quality.state | int < states.input_number.atmosphere_threshold_off.state | int }}'
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.pulselight_active
