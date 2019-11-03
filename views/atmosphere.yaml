@@ -15,6 +15,8 @@ cards:
       - entity: input_boolean.pulselight_active
         name: Blinklicht Luftqualität
         icon: mdi:alarm-light
+  - type: weather-forecast
+    entity: weather.dark_sky
   - type: vertical-stack
     cards:
       - type: horizontal-stack

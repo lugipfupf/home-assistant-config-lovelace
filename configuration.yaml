@@ -70,6 +70,10 @@ netatmo:
   username: !secret netatmo_username
   password: !secret netatmo_password
 
+weather:
+  - platform: darksky
+    api_key: !secret darksky_api-key
+
 light: !include lights.yaml
 scene: !include scenes.yaml
 input_boolean: !include input-booleans.yaml

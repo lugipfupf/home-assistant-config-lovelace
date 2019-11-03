@@ -25,7 +25,9 @@ views:
 #    path: network
 #    icon: mdi:lan
 #    cards:
-#  - title: test
-#    path: test
-#    icon: mdi:test-tube
-#    cards:
+  - title: test
+    path: test
+    icon: mdi:test-tube
+    cards:
+      - type: weather-forecast
+        entity: weather.dark_sky
