@@ -1,5 +1,5 @@
 title: Raumklima
-path: atmosphere
+path: climate
 icon: mdi:weather-windy
 cards:
   - type: entities
@@ -8,9 +8,9 @@ cards:
     entities:
       - entity: sensor.air_quality
         icon: mdi:periodic-table-co2
-      - entity: input_number.atmosphere_threshold_on
+      - entity: input_number.climate_threshold_on
         icon: mdi:lightbulb-on
-      - entity: input_number.atmosphere_threshold_off
+      - entity: input_number.climate_threshold_off
         icon: mdi:lightbulb
       - entity: input_boolean.pulselight_active
         name: Blinklicht Luftqualität

@@ -1,16 +1,16 @@
 # Luft schlecht ? input_boolean.pulselight_active = true
-- alias: "Atmosphere bad"
+- alias: "Climate bad"
   trigger:
     platform: template
-    value_template: '{{ states.sensor.air_quality.state | int > states.input_number.atmosphere_threshold_on.state | int }}'
+    value_template: '{{ states.sensor.air_quality.state | int > states.input_number.climate_threshold_on.state | int }}'
   action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.pulselight_active
 
-- alias: "Atmosphere good"
+- alias: "Climate good"
   trigger:
     platform: template
-    value_template: '{{ states.sensor.air_quality.state | int < states.input_number.atmosphere_threshold_off.state | int }}'
+    value_template: '{{ states.sensor.air_quality.state | int < states.input_number.climate_threshold_off.state | int }}'
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.pulselight_active
@@ -24,25 +24,25 @@
     value_template: '{{ is_state("input_boolean.pulselight_active", "on") }}'
   action:
     - service: timer.start
-      entity_id: timer.atmosphere_pulselight_on
+      entity_id: timer.climate_pulselight_on
 
 # timer start --> scene ein
-- alias: "Atmosphere Pulselight On"
+- alias: "Climate Pulselight On"
   trigger:
     - platform: event
       event_type: timer.started
       event_data:
-        entity_id: timer.atmosphere_pulselight_on
+        entity_id: timer.climate_pulselight_on
   action:
     - service: scene.turn_on
       data:
         entity_id: scene.frischluft
-- alias: "Atmosphere Pulselight Off"
+- alias: "Climate Pulselight Off"
   trigger:
     - platform: event
       event_type: timer.started
       event_data:
-        entity_id: timer.atmosphere_pulselight_off
+        entity_id: timer.climate_pulselight_off
   action:
     - service: scene.turn_on
       data:
@@ -50,26 +50,26 @@
 
 # timer end --> scene aus
 # input_boolean.pulselight_active == true ? timer start
-- alias: "Atmosphere Pulselight Timer On"
+- alias: "Climate Pulselight Timer On"
   trigger:
     - platform: event
       event_type: timer.finished
       event_data:
-        entity_id: timer.atmosphere_pulselight_on
+        entity_id: timer.climate_pulselight_on
   action:
     - service: timer.start
-      entity_id: timer.atmosphere_pulselight_off
+      entity_id: timer.climate_pulselight_off
 
-- alias: "Atmosphere Pulselight Timer Off"
+- alias: "Climate Pulselight Timer Off"
   trigger:
     - platform: event
       event_type: timer.finished
       event_data:
-        entity_id: timer.atmosphere_pulselight_off
+        entity_id: timer.climate_pulselight_off
   condition:
     condition: template
     value_template: '{{ is_state("input_boolean.pulselight_active", "on") }}'
   action:
     - service: timer.start
-      entity_id: timer.atmosphere_pulselight_on
+      entity_id: timer.climate_pulselight_on
 

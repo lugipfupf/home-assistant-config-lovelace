@@ -1,11 +1,11 @@
-atmosphere_threshold_on:
+climate_threshold_on:
   name: Anzeige einschalten bei
   initial: 1000
   min: 800
   max: 2000
   step: 50
 
-atmosphere_threshold_off:
+climate_threshold_off:
   name: Anzeige ausschalten bei
   initial: 700
   min: 300
