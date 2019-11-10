@@ -235,3 +235,26 @@
       xy_color: [0.3682,0.3715]
       brightness: 254
       transition: 2
+
+##############################
+# Night light
+##############################
+- name: Nachtlicht
+  entities:
+    light.all_but_nightlight:
+      state: off
+    light.nachtlicht:
+      state: on
+      xy_color: [0.561,0.404]
+      brightness: 1
+      transition: 2
+    light.bar:
+      state: on
+      xy_color: [0.561,0.404]
+      brightness: 30
+      transition: 2
+    light.e14candle:
+      state: on
+      xy_color: [0.677,0.304]
+      brightness: 36
+      transition: 2

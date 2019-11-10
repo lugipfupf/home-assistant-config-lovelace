@@ -29,5 +29,25 @@ views:
     path: test
     icon: mdi:test-tube
     cards:
-      - type: weather-forecast
-        entity: weather.dark_sky
+      - type: light
+        entity: light.kuche
+        name: kuche
+      - type: light
+        entity: light.kuche_1
+        name: kuche 1
+      - type: light
+        entity: light.kuche_2
+        name: kuche 2
+      - type: light
+        entity: light.kuche_3
+        name: kuche 3
+      - type: light
+        entity: light.kuche_spot
+        name: spare
+      - type: light
+        entity: light.nachtlicht
+        name: nacht
+      - type: "custom:button-entity-row"
+        buttons:
+          - entity: scene.nachtlicht
+            icon: mdi:brightness-7

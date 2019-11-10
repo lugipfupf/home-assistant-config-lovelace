@@ -46,8 +46,8 @@
     entity_id: sensor.hue_pushbutton
     state: '18'
   action:
-    service: scene.turn_on
-    entity_id: scene.movie_menu
+    service: input_boolean.toggle
+    entity_id: input_boolean.mediacontrol_movies
 
 #### DEPRECATED
 - alias: "PushButton 2"
@@ -59,8 +59,8 @@
     entity_id: sensor.hue_pushbutton
     state: '16'
   action:
-    - service: scene.turn_on
-      entity_id: scene.all_on
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.pulselight_active
 
 - alias: "PushButton 3"
   trigger:
@@ -72,4 +72,4 @@
     state: '17'
   action:
     - service: scene.turn_on
-      entity_id: scene.nightlight
+      entity_id: scene.nachtlicht

@@ -64,7 +64,8 @@
   - platform: group
     name: Küche
     entities:
-      - light.kuche
+      - light.kuche_decke
+      - light.kuche_spot
 
   # Gang
   - platform: group
@@ -78,3 +79,25 @@
     name: Gang
     entities:
       - light.gang_buckram
+
+  # All but Nightlight
+  - platform: group
+    name: All but nightlight
+    entities:
+      - light.schlafzimmer
+      - light.schlafzimmer_phil_buckram
+      - light.atelier
+      - light.cheminee
+      - light.gang_spot_2
+      - light.gang_spot_3
+      - light.gang_spot_4
+      - light.leinwand
+      - light.kuche_spot
+      - light.chino_decke
+
+  # Nightlight
+  - platform: group
+    name: Nachtlicht
+    entities:
+      - light.gang_spot_1
+      - light.kuche_decke
