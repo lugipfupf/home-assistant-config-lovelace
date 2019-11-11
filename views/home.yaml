@@ -12,6 +12,14 @@ cards:
       ######################################
       - type: vertical-stack
         cards:
+          - type: entity-button
+            entity: scene.nachtlicht
+            icon: mdi:weather-night
+            tap_action:
+              action: call-service
+              service: scene.turn_on
+              service_data:
+                entity_id: scene.nachtlicht
           - type: horizontal-stack
             cards:
               - type: light

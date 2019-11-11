@@ -29,6 +29,14 @@ views:
     path: test
     icon: mdi:test-tube
     cards:
+      - type: entity-button
+        entity: scene.nachtlicht
+        icon: mdi:weather-night
+        tap_action:
+          action: call-service
+          service: scene.turn_on
+          service_data:
+            entity_id: scene.nachtlicht
       - type: light
         entity: light.kuche
         name: kuche

@@ -1,6 +1,6 @@
 climate_threshold_on:
   name: Anzeige einschalten bei
-  initial: 1000
+  initial: 1300
   min: 800
   max: 2000
   step: 50
