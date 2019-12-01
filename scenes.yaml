@@ -256,5 +256,5 @@
     light.e14candle:
       state: on
       xy_color: [0.677,0.304]
-      brightness: 36
+      brightness: 14
       transition: 2
