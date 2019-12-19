@@ -57,6 +57,7 @@
   max: 10
 
 - platform: template
+  scan_interval: 60
   sensors:
     air_quality:
       friendly_name: "Luftqualität"
