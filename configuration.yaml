@@ -7,6 +7,16 @@ recorder:
   include:
     domains:
       - switch
+    entities:
+      - sensor.netatmo_cheminee_co2
+      - sensor.netatmo_cheminee_humidity
+      - sensor.netatmo_cheminee_temperature
+      - sensor.netatmo_chino_co2
+      - sensor.netatmo_chino_humidity
+      - sensor.netatmo_chino_temperature
+      - sensor.netatmo_schlafzimmer_co2
+      - sensor.netatmo_schlafzimmer_humidity
+      - sensor.netatmo_schlafzimmer_temperature
   exclude:
     entities:
       - sensor.strom_receiver
