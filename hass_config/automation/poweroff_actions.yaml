@@ -34,3 +34,12 @@
     data:
       entity_id: switch.powerstate_game
 
+- alias: 'Chromecast Strom ausschalten'
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_boolean.mediacontrol_cast", "off") }}'
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: switch.powerstate_chromecast
+
