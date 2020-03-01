@@ -13,15 +13,15 @@ recorder:
     domains:
       - switch
     entities:
-      - sensor.netatmo_cheminee_co2
-      - sensor.netatmo_cheminee_humidity
-      - sensor.netatmo_cheminee_temperature
-      - sensor.netatmo_chino_co2
-      - sensor.netatmo_chino_humidity
-      - sensor.netatmo_chino_temperature
       - sensor.netatmo_schlafzimmer_co2
+      - sensor.netatmo_insanityasylum_chino_co2
+      - sensor.netatmo_phil_co2
       - sensor.netatmo_schlafzimmer_humidity
+      - sensor.netatmo_insanityasylum_chino_humidity
+      - sensor.netatmo_insanityasylum_phil_humidity
       - sensor.netatmo_schlafzimmer_temperature
+      - sensor.netatmo_insanityasylum_chino_temperature
+      - sensor.netatmo_insanityasylum_phil_temperature
   exclude:
     entities:
       - sensor.strom_receiver
