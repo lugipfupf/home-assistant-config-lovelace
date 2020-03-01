@@ -1,0 +1,41 @@
+version: '3.7'
+
+networks:
+  hass_public:
+    name: hass_public
+  hass_private:
+    internal: true
+    name: hass_private
+
+services:
+  db:
+    image: postgres:12.2
+    container_name: hass_db
+    restart: always
+    volumes: 
+      - ./hass_db/pg_data:/var/lib/postgresql/data/pgdata
+      - ./hass_db/pg_secrets:/run/secrets:ro
+    environment: 
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_PASSWORD_FILE=/run/secrets/postgres-passwd
+
+    ports:
+      - "5432:5432"
+    networks: 
+      - hass_private
+
+  hass:
+    image: homeassistant/home-assistant:0.106.2
+    container_name: hass
+    depends_on:
+      - db
+    restart: always
+    volumes: 
+      - ./hass_config:/config
+    environment: 
+      - WHEELS_LINKS=https://wheels.home-assistant.io/alpine-3.10/amd64/
+    ports: 
+      - "8124:8123"
+    networks: 
+      - hass_private
+      - hass_public

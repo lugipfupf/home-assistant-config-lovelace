@@ -57,11 +57,10 @@
   max: 10
 
 - platform: template
-  scan_interval: 60
   sensors:
     air_quality:
       friendly_name: "Luftqualität"
-      value_template: "{{ ((states.sensor.netatmo_chino_co2.state | int + states.sensor.netatmo_cheminee_co2.state | int + states.sensor.netatmo_schlafzimmer_co2.state | int) / 3) | int }}"
+      value_template: "{{ ((states.sensor.netatmo_insanityasylum_chino_co2.state | int + states.sensor.netatmo_schlafzimmer_co2.state | int + states.sensor.netatmo_phil_co2.state | int) / 3) | int }}"
 
 ## Synolog - Does not work with Two-Factor-Auth enabled
 #- platform: synologydsm

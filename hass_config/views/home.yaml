@@ -4,7 +4,7 @@ panel: true
 icon: mdi:lightbulb
 
 cards:
-  - type: "custom:layout-card"
+  - type: custom:layout-card
     layout: horizontal
     cards:
       ######################################
@@ -62,7 +62,7 @@ cards:
 
 
       ######################################
-      # Spalte mitte
+      # Spalte rechts
       ######################################
       - type: vertical-stack
         cards:

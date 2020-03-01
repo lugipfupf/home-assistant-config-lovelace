@@ -30,7 +30,6 @@
   # Media
   media_center:
     name: Media Center
-    control: hidden
     entities:
       - input_boolean.mediacontrol_movies
       - input_boolean.mediacontrol_switch

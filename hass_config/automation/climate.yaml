@@ -1,3 +1,12 @@
+# Update sensor
+- alias: 'Update airquality'
+  trigger: 
+    - platform: time_pattern
+      minutes: '/1'
+  action:
+    - service: homeassistant.update_entity
+      entity_id: sensor.air_quality
+
 # Luft schlecht ? input_boolean.pulselight_active = true
 - alias: "Climate bad"
   trigger:

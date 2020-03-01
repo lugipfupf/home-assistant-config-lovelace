@@ -1,0 +1,34 @@
+title: Home Sweet Home
+resources:
+  - url: /community_plugin/button-card/button-card.js
+    type: module
+  - url: /community_plugin/button-entity-row/button-entity-row.js
+    type: module
+  - url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
+    type: module
+  - url: /community_plugin/atomic_calendar/atomic_calendar.js
+    type: module
+  - url: /community_plugin/upcoming-media-card/upcoming-media-card.js
+    type: js
+  - url: /community_plugin/lovelace-card-tools/card-tools.js
+    type: module
+  - url: /community_plugin/lovelace-layout-card/layout-card.js
+    type: module
+views:
+  - !include views/home.yaml
+  - !include views/media.yaml
+  - !include views/climate.yaml
+  - !include views/calendar.yaml
+#  - !include views/power.yaml
+#  - !include views/settings.yaml
+#  - title: Network
+#    path: network
+#    icon: mdi:lan
+#    cards:
+  # - title: test
+  #   path: test
+  #   icon: mdi:test-tube
+  #   cards:
+  #     - type: entities
+  #       entities:
+  #         - input_text.light_bar_state
