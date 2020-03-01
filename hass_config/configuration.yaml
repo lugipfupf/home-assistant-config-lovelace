@@ -22,6 +22,7 @@ recorder:
       - sensor.netatmo_schlafzimmer_temperature
       - sensor.netatmo_insanityasylum_chino_temperature
       - sensor.netatmo_insanityasylum_phil_temperature
+      - sensor.air_quality
   exclude:
     entities:
       - sensor.strom_receiver
