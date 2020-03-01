@@ -2,19 +2,27 @@ title: Raumklima
 path: climate
 icon: mdi:weather-windy
 cards:
-  - type: entities
-    title: Raumklima
-    show_header_toggle: false
-    entities:
-      - entity: sensor.air_quality
+  - type: vertical-stack
+    cards:
+      - type: custom:mini-graph-card
+        name: Luftqualität
         icon: mdi:periodic-table-co2
-      - entity: input_number.climate_threshold_on
-        icon: mdi:lightbulb-on
-      - entity: input_number.climate_threshold_off
-        icon: mdi:lightbulb
-      - entity: input_boolean.pulselight_active
-        name: Blinklicht Luftqualität
-        icon: mdi:alarm-light
+        hours_to_show: 12
+        line_color: blue
+        line_width: 2
+        entities:
+          - sensor.air_quality
+      - type: entities
+        title: Raumklima Einstellungen
+        show_header_toggle: false
+        entities:
+          - entity: input_number.climate_threshold_on
+            icon: mdi:lightbulb-on
+          - entity: input_number.climate_threshold_off
+            icon: mdi:lightbulb
+          - entity: input_boolean.pulselight_active
+            name: Blinklicht Luftqualität
+            icon: mdi:alarm-light
   - type: weather-forecast
     entity: weather.dark_sky
   - type: vertical-stack
